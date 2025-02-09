@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Github, ExternalLink, Search } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
-import { projects } from "../data/projects";
+import { projects } from "../data/config";
 
 const Projects = () => {
   const { theme } = useTheme();
@@ -67,9 +67,9 @@ const Projects = () => {
 
         {/* Technology Filter */}
         <div className="flex flex-wrap justify-center gap-2">
-          {allTechnologies.map((tech) => (
+          {allTechnologies.map((tech, i) => (
             <button
-              key={tech}
+              key={i}
               onClick={() => setSelectedTech(tech)}
               className={`px-4 py-2 rounded-full transition-all transform hover:scale-105 ${
                 selectedTech === tech
@@ -89,7 +89,7 @@ const Projects = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredProjects.map((project, index) => (
           <div
-            key={project.id}
+            key={index}
             className={`rounded-lg overflow-hidden transform transition-all hover:-translate-y-2 ${
               theme === "dark" ? "bg-gray-800" : "bg-white"
             } shadow-lg`}
@@ -123,9 +123,9 @@ const Projects = () => {
 
               {/* Technologies */}
               <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech) => (
+                {project.tech.map((tech, i) => (
                   <span
-                    key={tech}
+                    key={i}
                     className="px-3 py-1 text-sm rounded-full bg-blue-100 text-blue-800"
                   >
                     {tech}

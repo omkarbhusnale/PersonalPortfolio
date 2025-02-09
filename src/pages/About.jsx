@@ -1,41 +1,9 @@
 import { useTheme } from "../context/ThemeContext";
-import { skills } from "../data/projects";
+import { education, experiences, skills } from "../data/config";
 import { Briefcase, GraduationCap, Award } from "lucide-react";
 
 const About = () => {
   const { theme } = useTheme();
-
-  const experiences = [
-    {
-      title: "Associate Software Engineer",
-      company: "General Industrial Controls",
-      period: "2024 - Present",
-      description:
-        "Led development of enterprise-scale applications, mentored junior developers, and implemented CI/CD pipelines.",
-    },
-    {
-      title: "R&D Software Engineer",
-      company: "General Industrial Controls",
-      period: "2023 - 2024",
-      description:
-        "Developed and maintained multiple client projects using React, Node.js, and AWS.",
-    },
-  ];
-
-  const education = [
-    {
-      degree: "Bachlore of Computer Science",
-      school: "Dr. DY Patil Institute of Technology, Pune",
-      year: "2020 - 2023",
-      description: "Major in Software Engineering and Minor in Cyber Security",
-    },
-    {
-      degree: "Diploma of Computer Science",
-      school: "MIT, Pune",
-      year: "2017 - 2020",
-      description: "Major in Computer Science, Minor in Mathematics",
-    },
-  ];
 
   return (
     <div className="max-w-4xl mx-auto py-16 space-y-16">
@@ -54,15 +22,15 @@ const About = () => {
           }`}
         >
           <p>
-            I'm a passionate Full Stack Developer with over 2 years of
+            I&apos;m a passionate Full Stack Developer with over 2 years of
             experience in building web applications. I specialize in JavaScript
             technologies across the stack and have professional experience
             working with React, Node.js, and cloud platforms.
           </p>
           <p>
             My journey in software development started during my university
-            years, and I've since worked with various technologies and
-            frameworks. I'm particularly interested in building scalable
+            years, and I&apos;ve since worked with various technologies and
+            frameworks. I&apos;m particularly interested in building scalable
             applications and implementing clean, maintainable code.
           </p>
         </div>

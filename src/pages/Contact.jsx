@@ -1,4 +1,12 @@
-import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Loader2,
+  Github,
+  Linkedin,
+} from "lucide-react";
 
 import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
@@ -58,32 +66,6 @@ const Contact = () => {
 
   return (
     <div>
-      {/* Contact Section */}
-      {/* <div id="contact" className="bg-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900">
-              Get In Touch
-            </h2>
-            <p className="mt-4 text-lg text-gray-500">
-              I&apos;m always open to discussing new projects, opportunities,
-              and collaborations.
-            </p>
-            <div className="mt-8 flex justify-center space-x-6">
-              <a href="#" className="text-gray-400 hover:text-gray-500">
-                <Github className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500">
-                <Linkedin className="h-6 w-6" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500">
-                <Mail className="h-6 w-6" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       <div className="py-16 max-w-7xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-16">
           {/* Contact Information */}
@@ -114,7 +96,9 @@ const Contact = () => {
                 }`}
               >
                 <Mail className="h-6 w-6 text-blue-600" />
-                <span>john.doe@example.com</span>
+                <a href="mailto:omkar.bhusnale@outlook.com">
+                  omkar.bhusnale@outlook.com
+                </a>
               </div>
               <div
                 className={`flex items-center space-x-4 ${
@@ -122,7 +106,7 @@ const Contact = () => {
                 }`}
               >
                 <Phone className="h-6 w-6 text-blue-600" />
-                <span>+1 (555) 123-4567</span>
+                <a href="tel:+917219305459">+91 7219305459</a>
               </div>
               <div
                 className={`flex items-center space-x-4 ${
@@ -130,7 +114,7 @@ const Contact = () => {
                 }`}
               >
                 <MapPin className="h-6 w-6 text-blue-600" />
-                <span>San Francisco, CA</span>
+                <span>Pune Maharashtra, IN</span>
               </div>
             </div>
 
@@ -141,10 +125,32 @@ const Contact = () => {
                   theme === "dark" ? "text-white" : "text-gray-900"
                 }`}
               >
-                Follow Me
+                Follow Me On
               </h2>
               <div className="flex space-x-4">
-                {/* Add your social media links here */}
+                <div className="flex justify-center space-x-6 mt-10">
+                  <a
+                    href="https://github.com/omkarbhusnale"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-gray-500 transition-colors"
+                  >
+                    {/* <img
+                      src="../../public/icons/github/github-original.svg"
+                      alt="GitHub"
+                      className="h-6 w-6 mx-2 bg-white"
+                    /> */}
+                    <Github className="h-6 w-6" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/omkarbhusnale/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-gray-500 transition-colors"
+                  >
+                    <Linkedin className="h-6 w-6" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -324,29 +330,6 @@ const Contact = () => {
                 </div>
               )}
             </form>
-          </div>
-        </div>
-
-        {/* Map or Additional Contact Information */}
-        <div
-          className={`mt-16 p-8 rounded-lg ${
-            theme === "dark" ? "bg-gray-800" : "bg-white"
-          } shadow-lg`}
-        >
-          <h2
-            className={`text-2xl font-bold mb-4 ${
-              theme === "dark" ? "text-white" : "text-gray-900"
-            }`}
-          >
-            Office Location
-          </h2>
-          {/* Add a map component here if desired */}
-          <div
-            className={`aspect-video rounded-lg ${
-              theme === "dark" ? "bg-gray-700" : "bg-gray-100"
-            } flex items-center justify-center`}
-          >
-            <MapPin className="h-12 w-12 text-gray-400" />
           </div>
         </div>
 

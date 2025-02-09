@@ -5,11 +5,11 @@ import {
   Mail,
   Download,
   ArrowRight,
-  Code2,
   ExternalLink,
 } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import Profile from "../assets/profile.jpg";
+import { technologies } from "../data/config";
 
 const Home = () => {
   const { theme } = useTheme();
@@ -124,9 +124,9 @@ const Home = () => {
           }`}
         >
           {/* Featured Project Cards - Show only 2 on homepage */}
-          {[1, 2].map((index) => (
+          {[1, 2].map((index, i) => (
             <div
-              key={index}
+              key={i}
               className={`rounded-lg p-6 ${
                 theme === "dark"
                   ? "bg-gray-800 hover:bg-gray-750"
@@ -171,21 +171,26 @@ const Home = () => {
       <section className="space-y-8">
         <h2 className="text-3xl font-bold">Skills & Technologies</h2>
         <div
-          className={`grid grid-cols-2 md:grid-cols-4 gap-4 ${
+          className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-2 ${
             theme === "dark" ? "text-gray-300" : "text-gray-600"
           }`}
         >
-          {["React", "Node.js", "TypeScript", "AWS"].map((skill) => (
+          {technologies.map((technology, i) => (
             <div
-              key={skill}
-              className={`p-4 rounded-lg ${
+              key={i}
+              className={`p-3 rounded-lg ${
                 theme === "dark"
                   ? "bg-gray-800 hover:bg-gray-750"
                   : "bg-white hover:bg-gray-50"
               } shadow flex items-center space-x-8`}
             >
-              <Code2 className="h-5 w-5 text-blue-600 mx-4" />
-              {skill}
+              {/* <Code2 className="h-5 w-5 text-blue-600 mx-4" /> */}
+              <img
+                src={technology.icon}
+                alt={technology.name}
+                className="h-10 w-10 text-blue-600 mx-2"
+              />
+              {technology.name}
             </div>
           ))}
         </div>
