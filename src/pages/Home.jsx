@@ -1,206 +1,151 @@
 import { Link } from "react-router-dom";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Download,
-  ArrowRight,
-  ExternalLink,
-} from "lucide-react";
+import { Github, ArrowRight, ExternalLink } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import Profile from "../assets/profile.jpg";
-import { technologies } from "../data/config";
+import { projects, technologies } from "../data/config";
+import HeroSection from "../components/Hero";
 
 const Home = () => {
   const { theme } = useTheme();
-
   return (
-    <div className="space-y-32 max-h-full py-12 mt-12">
-      <section className="text-center space-y-8">
-        <div className="space-y-8 text-center">
-          <div
-            className="flex flex-col md:flex-row items-center justify-center 
-                          md:justify-between max-w-4xl mx-auto"
+    <div className="space-y-32 max-h-full py-14 mt-12">
+      {/* Hero Section */}
+      <HeroSection theme={theme} Profile={Profile} />
+
+      {/* Featured Projects Preview */}
+      <section className="container mx-auto py-16">
+        <div className="flex justify-between items-center mb-10">
+          <div className="relative">
+            <h2 className="text-3xl md:text-4xl font-bold relative z-10">
+              Featured Projects
+            </h2>
+          </div>
+
+          <Link
+            to="/projects"
+            className="group inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium hover:shadow-lg transition-all duration-300"
           >
-            <div className="space-y-4 md:max-w-2xl">
-              <h1 className="text-4xl font-extrabold sm:text-5xl md:text-6xl text-left">
-                <span
-                  className={`block ${
-                    theme === "dark" ? "text-white" : "text-gray-900"
+            View All
+            <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Featured Project Cards - Show only 2 Latest Projects on homepage */}
+          {projects.slice(0, 2).map((project, i) => (
+            <div
+              key={i}
+              className="rounded-xl overflow-hidden group transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+              <div className={`relative h-60 overflow-hidden`}>
+                {/* Project image or placeholder with gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-blue-600/30 group-hover:opacity-70 transition-opacity duration-300"></div>
+                <img
+                  src={project.bgImage || "/projects/project-placeholder.jpg"}
+                  alt={project.title}
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-4 right-4 space-x-2">
+                  <span className="inline-flex items-center px-3 py-1 text-xs font-medium bg-blue-600/90 text-white rounded-full backdrop-blur-sm">
+                    {project.tech[0]}
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1 text-xs font-medium bg-purple-600/90 text-white rounded-full backdrop-blur-sm">
+                    {project.tech[1]}
+                  </span>
+                </div>
+              </div>
+
+              <div
+                className={`p-6 ${
+                  theme === "dark"
+                    ? "bg-gray-800/90 backdrop-blur-md"
+                    : "bg-white"
+                } shadow-lg`}
+              >
+                <h3 className="text-xl font-bold mb-3">{project.title}</h3>
+                <p
+                  className={`mb-4 ${
+                    theme === "dark" ? "text-gray-300" : "text-gray-600"
                   }`}
                 >
-                  Hi, I&apos;m Omkar Bhusnale
-                </span>
-                <span className="block text-blue-600 mt-2">
-                  Full Stack Developer
-                </span>
-              </h1>
-              <p
-                className={`text-xl ${
-                  theme === "dark" ? "text-gray-300" : "text-gray-500"
-                } text-left`}
-              >
-                I build exceptional and accessible digital experiences for the
-                web and Desktop.
-              </p>
-            </div>
+                  {project.description.length > 120
+                    ? `${project.description.substring(0, 120)}...`
+                    : project.description}
+                </p>
 
-            <div className="mt-6 md:mt-0 md:ml-8">
-              <div className="relative">
-                <div
-                  className="w-50 h-60 rounded-full overflow-hidden border-4 
-                          border-blue-600 shadow-lg transform transition-transform hover:scale-105"
-                >
-                  <img
-                    src={Profile}
-                    alt="Omkar Bhusnale"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="flex space-x-4 mt-16">
+                  <a
+                    href={project.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium transition-transform hover:translate-y-[-2px]"
+                  >
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Live Demo
+                  </a>
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex items-center px-4 py-2 rounded-lg ${
+                      theme === "dark"
+                        ? "bg-gray-700 text-white hover:bg-gray-600"
+                        : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                    } transition-transform hover:translate-y-[-2px]`}
+                  >
+                    <Github className="h-4 w-4 mr-2" />
+                    Source
+                  </a>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="flex justify-center space-x-4 mt-32">
-          <Link
-            to="/contact"
-            className="inline-flex items-center px-6 py-3 rounded-md bg-blue-600 
-                    text-white hover:bg-blue-700 transition-colors"
-          >
-            <Mail className="mr-2 h-5 w-5" />
-            Contact Me
-          </Link>
-          <a
-            href="/Resume.pdf"
-            download="OmkarBhunale_FullStack_Dev.pdf"
-            className={`inline-flex items-center px-6 py-3 rounded-md border ${
-              theme === "dark"
-                ? "border-gray-700 hover:border-gray-600"
-                : "border-gray-300 hover:border-gray-400"
-            } transition-colors`}
-          >
-            <Download className="mr-2 h-5 w-5" />
-            Resume
-          </a>
-        </div>
-
-        <div className="flex justify-center space-x-6 mt-10">
-          <a
-            href="https://github.com/omkarbhusnale"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-gray-500 transition-colors"
-          >
-            <Github className="h-6 w-6" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/omkarbhusnale/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-gray-500 transition-colors"
-          >
-            <Linkedin className="h-6 w-6" />
-          </a>
-        </div>
-      </section>
-
-      {/* Featured Projects Preview */}
-      <section className="space-y-8">
-        <div className="flex justify-between items-center">
-          <h2 className="text-3xl font-bold">Featured Projects</h2>
-          <Link
-            to="/projects"
-            className="inline-flex items-center text-blue-600 hover:text-blue-700"
-          >
-            View All
-            <ArrowRight className="ml-1 h-4 w-4" />
-          </Link>
-        </div>
-
-        <div
-          className={`grid grid-cols-1 md:grid-cols-2 gap-6 ${
-            theme === "dark" ? "text-gray-300" : "text-gray-600"
-          }`}
-        >
-          {/* Featured Project Cards - Show only 2 on homepage */}
-          {[1, 2].map((index, i) => (
-            <div
-              key={i}
-              className={`rounded-lg p-6 ${
-                theme === "dark"
-                  ? "bg-gray-800 hover:bg-gray-750"
-                  : "bg-white hover:bg-gray-50"
-              } shadow-lg transition-colors`}
-            >
-              <h3 className="text-xl font-semibold mb-2">Project {index}</h3>
-              <p className="mb-4">
-                Brief project description showcasing key features and
-                technologies used.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full">
-                  React
-                </span>
-                <span className="px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full">
-                  Node.js
-                </span>
-              </div>
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="text-blue-600 hover:text-blue-700 flex items-center"
-                >
-                  <ExternalLink className="h-4 w-4 mr-1" />
-                  View Demo
-                </a>
-                <a
-                  href="#"
-                  className="text-blue-600 hover:text-blue-700 flex items-center"
-                >
-                  <Github className="h-4 w-4 mr-1" />
-                  Source Code
-                </a>
-              </div>
-            </div>
           ))}
         </div>
       </section>
 
-      {/* Quick Skills Overview */}
-      <section className="space-y-8">
-        <h2 className="text-3xl font-bold">Skills & Technologies</h2>
-        <div
-          className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-2 ${
-            theme === "dark" ? "text-gray-300" : "text-gray-600"
-          }`}
-        >
+      {/* Skills & Technologies */}
+      <section className="container mx-auto py-16 relative">
+        {/* Background accent */}
+        <div className="absolute -z-10 top-20 right-10 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute -z-10 bottom-10 left-20 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div>
+
+        <div className="relative mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold relative z-10">
+            Skills & Technologies
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {technologies.map((technology, i) => (
             <div
               key={i}
-              className={`p-3 rounded-lg ${
+              className={`p-4 rounded-xl ${
                 theme === "dark"
-                  ? "bg-gray-800 hover:bg-gray-750"
-                  : "bg-white hover:bg-gray-50"
-              } shadow flex items-center space-x-8`}
+                  ? "bg-gray-800/80 hover:bg-gray-700/80 text-white"
+                  : "bg-white hover:bg-gray-50 text-gray-800"
+              } shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group`}
             >
-              {/* <Code2 className="h-5 w-5 text-blue-600 mx-4" /> */}
-              <img
-                src={technology.icon}
-                alt={technology.name}
-                className="h-10 w-10 text-blue-600 mx-2"
-              />
-              {technology.name}
+              <div className="flex items-center space-x-3">
+                <div className="p-2 rounded-lg bg-gradient-to-br from-purple-500/10 to-blue-500/10 group-hover:from-purple-500/20 group-hover:to-blue-500/20 transition-colors duration-300">
+                  <img
+                    src={technology.icon}
+                    alt={technology.name}
+                    className="h-8 w-8"
+                  />
+                </div>
+                <span className="font-medium">{technology.name}</span>
+              </div>
             </div>
           ))}
         </div>
-        <div className="text-center">
+
+        <div className="mt-10 flex justify-center">
           <Link
             to="/about"
-            className="inline-flex items-center text-blue-600 hover:text-blue-700"
+            className="group inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium hover:shadow-lg transition-all duration-300"
           >
             View Full Skill Set
-            <ArrowRight className="ml-1 h-4 w-4" />
+            <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </div>
       </section>

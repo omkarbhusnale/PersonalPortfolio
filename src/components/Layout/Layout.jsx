@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
   return (
     <div
       className={`min-h-screen ${
-        theme === "dark" ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
+        theme === "dark" ? "bg-black text-white" : "bg-gray-50 text-gray-900"
       }`}
     >
       <Navbar />

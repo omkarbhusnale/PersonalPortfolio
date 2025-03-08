@@ -1,17 +1,27 @@
 export const experiences = [
   {
+    title: "Freelance Full-stack Developer",
+    company: "Upwork | Freelancer | Fiverr",
+    period: "2021 - Present",
+    description: `Developed and maintained multiple client projects using React, Node.js, and MongoDB.`,
+  },
+  {
     title: "Associate Software Engineer",
     company: "General Industrial Controls",
     period: "2024 - Present",
-    description:
-      "Led development of enterprise-scale applications, mentored junior developers, and implemented CI/CD pipelines.",
+    description: `
+      Designed and Developed enterprise-scale applications, collaborate with junior developers, 
+      and implemented CI/ CD pipelines.Worked on various projects using React, Node.js, and MongoDB.
+      Implemented RESTful APIs and integrated third - party services.
+      Implemented unit and integration tests for all applications.`,
   },
   {
     title: "R&D Software Engineer",
     company: "General Industrial Controls",
     period: "2023 - 2024",
-    description:
-      "Developed and maintained multiple client projects using React, Node.js, and AWS.",
+    description: `
+      Developed and maintained multiple client projects using ASP.NET Core, React, and SQL Server.
+      Implemented RESTful APIs and integrated third-party services.`,
   },
 ];
 
@@ -26,7 +36,7 @@ export const education = [
     degree: "Diploma of Computer Science",
     school: "MIT, Pune",
     year: "2017 - 2020",
-    description: "Major in Computer Science, Minor in Mathematics",
+    description: "Major in Computer Science",
   },
 ];
 
@@ -38,6 +48,7 @@ export const projects = [
     tech: ["Next.js", "Node.js", "MongoDB", "Stripe"],
     demoLink: "#",
     githubLink: "#",
+    bgImage: "/projects/eCommerce.png",
   },
   {
     title: "Task Management App",
@@ -46,6 +57,7 @@ export const projects = [
     tech: ["React", "Firebase", "Material-UI", "Redux"],
     demoLink: "#",
     githubLink: "#",
+    bgImage: "/projects/taskManagement.png",
   },
   {
     title: "AI Content Generator",
@@ -54,6 +66,7 @@ export const projects = [
     tech: ["React", "Node.js", "OpenAI API", "TailwindCSS"],
     demoLink: "#",
     githubLink: "#",
+    bgImage: "/projects/imageNotFound.png",
   },
 ];
 
@@ -109,74 +122,77 @@ export const skills = [
 export const technologies = [
   {
     name: "JavaScript",
-    icon: "../../public/icons/javascript/javascript-original.svg",
+    icon: "/icons/javascript/javascript-original.svg",
+    level: 80,
   },
   {
     name: "TypeScript",
-    icon: "../../public/icons/typescript/typescript-original.svg",
+    icon: "/icons/typescript/typescript-original.svg",
+    level: 80,
   },
   {
     name: "Node.js",
-    icon: "../../public/icons/nodejs/nodejs-original.svg",
+    icon: "/icons/nodejs/nodejs-original.svg",
+    level: 80,
   },
   {
     name: "ReactJs",
-    icon: "../../public/icons/react/react-original.svg",
+    icon: "/icons/react/react-original.svg",
   },
   {
     name: "Redux",
-    icon: "../../public/icons/redux/redux-original.svg",
+    icon: "/icons/redux/redux-original.svg",
   },
   {
     name: "React Router",
-    icon: "../../public/icons/reactrouter/reactrouter-original.svg",
+    icon: "/icons/reactrouter/reactrouter-original.svg",
   },
   {
     name: "TailwindCSS",
-    icon: "../../public/icons/tailwindcss/tailwindcss-original.svg",
+    icon: "/icons/tailwindcss/tailwindcss-original.svg",
   },
   {
     name: "Python",
-    icon: "../../public/icons/python/python-original.svg",
+    icon: "/icons/python/python-original.svg",
   },
   {
     name: "C#",
-    icon: "../../public/icons/csharp/csharp-original.svg",
+    icon: "/icons/csharp/csharp-original.svg",
   },
   {
     name: "CPP",
-    icon: "../../public/icons/cplusplus/cplusplus-original.svg",
+    icon: "/icons/cplusplus/cplusplus-original.svg",
   },
   {
     name: "Java",
-    icon: "../../public/icons/java/java-original.svg",
+    icon: "/icons/java/java-original.svg",
   },
   {
     name: "MongoDB",
-    icon: "../../public/icons/mongodb/mongodb-original.svg",
+    icon: "/icons/mongodb/mongodb-original.svg",
   },
   {
     name: "PostgreSQL",
-    icon: "../../public/icons/postgresql/postgresql-original.svg",
+    icon: "/icons/postgresql/postgresql-original.svg",
   },
   {
     name: "MySQL",
-    icon: "../../public/icons/mysql/mysql-original.svg",
+    icon: "/icons/mysql/mysql-original.svg",
   },
   {
     name: "Git",
-    icon: "../../public/icons/git/git-original.svg",
+    icon: "/icons/git/git-original.svg",
   },
   {
     name: "Postman",
-    icon: "../../public/icons/postman/postman-original.svg",
+    icon: "/icons/postman/postman-original.svg",
   },
   {
     name: "Sqlite",
-    icon: "../../public/icons/sqlite/sqlite-original.svg",
+    icon: "/icons/sqlite/sqlite-original.svg",
   },
   {
     name: "WPF",
-    icon: "../../public/icons/dotnetcore/dotnetcore-original.svg",
+    icon: "/icons/dotnetcore/dotnetcore-original.svg",
   },
 ];

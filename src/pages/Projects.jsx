@@ -99,7 +99,7 @@ const Projects = () => {
           >
             {/* Project Image */}
             <img
-              src={`/api/placeholder/400/200`}
+              src={project.bgImage || require("/projects/imageNotFound.png")}
               alt={project.title}
               className="w-full h-48 object-cover"
             />
@@ -126,7 +126,11 @@ const Projects = () => {
                 {project.tech.map((tech, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 text-sm rounded-full bg-blue-100 text-blue-800"
+                    className={`px-2 py-1 text-xs rounded-full ${
+                      theme === "dark"
+                        ? "bg-purple-600/90 text-white"
+                        : "bg-blue-600/90 text-white"
+                    }`}
                   >
                     {tech}
                   </span>
@@ -134,24 +138,31 @@ const Projects = () => {
               </div>
 
               {/* Links */}
-              <div className="flex space-x-4 pt-4">
+              <div className="flex space-x-4 mt-16">
                 <a
                   href={project.demoLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-blue-600 hover:text-blue-700"
+                  className="
+                    flex items-center px-4 py-2 rounded-lg bg-gradient-to-r 
+                  from-purple-500 to-blue-500 text-white font-medium transition-transform 
+                  hover:translate-y-[-2px] shadow-md hover:shadow-lg"
                 >
-                  <ExternalLink className="h-4 w-4 mr-1" />
+                  <ExternalLink className="h-4 w-4 mr-2" />
                   Live Demo
                 </a>
                 <a
                   href={project.githubLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-blue-600 hover:text-blue-700"
+                  className={`flex items-center px-4 py-2 rounded-lg ${
+                    theme === "dark"
+                      ? "bg-gray-700 text-white hover:bg-gray-600"
+                      : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                  } transition-transform hover:translate-y-[-2px] shadow-md hover:shadow-lg`}
                 >
-                  <Github className="h-4 w-4 mr-1" />
-                  Source Code
+                  <Github className="h-4 w-4 mr-2" />
+                  Source
                 </a>
               </div>
             </div>
