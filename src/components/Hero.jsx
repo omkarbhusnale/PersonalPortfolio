@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 const HeroSection = ({ theme, Profile }) => {
   const [titleIndex, setTitleIndex] = useState(0);
-  const titles = ["Web Designer", "Full Stack Developer"];
+  const titles = [
+    "Software Engineer",
+    "Web Designer",
+    "Full Stack Developer",
+    "Mobile App Developer",
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,7 +53,6 @@ const HeroSection = ({ theme, Profile }) => {
 
           <div className="mt-6 md:mt-0 md:ml-8">
             <div className="relative">
-              {/* Gradient border effect */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500  transform scale-121"></div>
               <div
                 className={`

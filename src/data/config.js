@@ -42,10 +42,28 @@ export const education = [
 
 export const projects = [
   {
+    title: "Capitalflex Fintech Portal",
+    description:
+      "Full-stack Disney Plus Clone build with using ReactJs Styled Components, Redux, and Firebase Tools. Features include user authentication.",
+    tech: ["ReactJs", "Typescript", "Node.js", "Mongodb", "Redux", "Vercel"],
+    demoLink: "https://capital-flex-one.vercel.app/",
+    githubLink: "https://github.com/omkarbhusnale/capflex-portal",
+    bgImage: "/projects/capitalflex.png",
+  },
+  {
+    title: "Disney Plus",
+    description:
+      "Full-stack Disney Plus Clone build with using ReactJs Styled Components, Redux, and Firebase Tools. Features include user authentication.",
+    tech: ["React.js", "Node.js", "Firebase", "Redux", "Styled Components"],
+    demoLink: "https://disneyplus-clone-3eaf1.web.app/",
+    githubLink: "https://github.com/omkarbhusnale/disney-clone",
+    bgImage: "/projects/disneyPlus.png",
+  },
+  {
     title: "E-Commerce Platform",
     description:
       "Full-stack e-commerce solution built with Next.js, Node.js, and MongoDB. Features include user authentication, payment processing, and order management.",
-    tech: ["Next.js", "Node.js", "MongoDB", "Stripe"],
+    tech: ["Next.js", "Node.js", "MongoDB", "Stripe", "TailwindCSS"],
     demoLink: "#",
     githubLink: "#",
     bgImage: "/projects/eCommerce.png",
@@ -58,15 +76,6 @@ export const projects = [
     demoLink: "#",
     githubLink: "#",
     bgImage: "/projects/taskManagement.png",
-  },
-  {
-    title: "AI Content Generator",
-    description:
-      "Web application that leverages OpenAI's GPT-3 API to generate various types of content. Built with React and Node.js.",
-    tech: ["React", "Node.js", "OpenAI API", "TailwindCSS"],
-    demoLink: "#",
-    githubLink: "#",
-    bgImage: "/projects/imageNotFound.png",
   },
 ];
 

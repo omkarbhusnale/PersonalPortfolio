@@ -83,7 +83,7 @@ const Contact = () => {
                   theme === "dark" ? "text-gray-300" : "text-gray-600"
                 }`}
               >
-                I'm always interested in hearing about new projects and
+                I&apos;m always interested in hearing about new projects and
                 opportunities. Feel free to reach out!
               </p>
             </div>
