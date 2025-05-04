@@ -8,7 +8,7 @@ import HeroSection from "../components/Hero";
 const Home = () => {
   const { theme } = useTheme();
   return (
-    <div className="space-y-32 max-h-full py-14 mt-12">
+    <div className="space-y-32 max-h-full py-14 mt-2 sm:mt-12">
       {/* Hero Section */}
       <HeroSection theme={theme} Profile={Profile} />
 

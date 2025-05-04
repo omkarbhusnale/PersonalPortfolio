@@ -62,7 +62,7 @@ const HeroSection = ({ theme, Profile }) => {
               ></div>
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 blur-xs transform scale-105"></div>
 
-              <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-transparent">
+              <div className="relative w-40 h-40 sm:w-60 md:h-60 rounded-full overflow-hidden border-4 border-transparent">
                 <img
                   src={Profile}
                   alt="Omkar Bhusnale"

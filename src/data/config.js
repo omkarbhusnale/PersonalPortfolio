@@ -44,7 +44,7 @@ export const projects = [
   {
     title: "Capitalflex Fintech Portal",
     description:
-      "Full-stack Disney Plus Clone build with using ReactJs Styled Components, Redux, and Firebase Tools. Features include user authentication.",
+      "A comprehensive banking web application offering loan services, CIBIL score checks, EMI/eligibility calculators, and loan enquiry submissions. Users can explore various loan options, check their creditworthiness, calculate loan EMIs, and submit loan applications seamlessly.",
     tech: ["ReactJs", "Typescript", "Node.js", "Mongodb", "Redux", "Vercel"],
     demoLink: "https://capital-flex-one.vercel.app/",
     githubLink: "https://github.com/omkarbhusnale/capflex-portal",
@@ -54,7 +54,7 @@ export const projects = [
     title: "Disney Plus",
     description:
       "Full-stack Disney Plus Clone build with using ReactJs Styled Components, Redux, and Firebase Tools. Features include user authentication.",
-    tech: ["React.js", "Node.js", "Firebase", "Redux", "Styled Components"],
+    tech: ["ReactJs", "Node.js", "Firebase", "Redux", "Styled Components"],
     demoLink: "https://disneyplus-clone-3eaf1.web.app/",
     githubLink: "https://github.com/omkarbhusnale/disney-clone",
     bgImage: "/projects/disneyPlus.png",

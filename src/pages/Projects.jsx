@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Github, ExternalLink, Search } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import { projects } from "../data/config";
+import imageNotFound from "../../public/projects/imageNotFound.png";
 
 const Projects = () => {
   const { theme } = useTheme();
@@ -99,7 +100,7 @@ const Projects = () => {
           >
             {/* Project Image */}
             <img
-              src={project.bgImage || require("/projects/imageNotFound.png")}
+              src={project.bgImage || imageNotFound}
               alt={project.title}
               className="w-full h-48 object-cover"
             />
