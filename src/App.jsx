@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
+import { Analytics } from "@vercel/analytics/react";
 import Layout from "./components/Layout/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -21,6 +22,7 @@ function App() {
           </Routes>
         </Layout>
       </Router>
+      <Analytics />
     </ThemeProvider>
   );
 }
