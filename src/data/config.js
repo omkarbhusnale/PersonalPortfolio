@@ -10,9 +10,9 @@ export const experiences = [
     company: "General Industrial Controls",
     period: "2024 - Present",
     description: `
-      Designed and Developed enterprise-scale applications, collaborate with junior developers, 
-      and implemented CI/ CD pipelines.Worked on various projects using React, Node.js, and MongoDB.
-      Implemented RESTful APIs and integrated third - party services.
+      Designed and Developed enterprise-scale applications, collaborated with developers, mentored junior developers,
+      and implemented CI/CD pipelines. Worked on various projects using React, Node.js, and MongoDB.
+      Implemented RESTful APIs and integrated third-party services.
       Implemented unit and integration tests for all applications.`,
   },
   {
@@ -45,37 +45,49 @@ export const projects = [
     title: "Capitalflex Fintech Portal",
     description:
       "A comprehensive banking web application offering loan services, CIBIL score checks, EMI/eligibility calculators, and loan enquiry submissions. Users can explore various loan options, check their creditworthiness, calculate loan EMIs, and submit loan applications seamlessly.",
-    tech: ["ReactJs", "Typescript", "Node.js", "Mongodb", "Redux", "Vercel"],
-    demoLink: "https://capital-flex-one.vercel.app/",
-    githubLink: "https://github.com/omkarbhusnale/capflex-portal",
+    tech: ["ReactJs", "Typescript", "Node.js", "MongoDB", "Vercel"],
+    demoLink: "https://www.capitalflexindia.com/",
+    githubLink: "https://github.com/omkarbhusnale/capitalflex-client-side",
     bgImage: "/projects/capitalflex.png",
+  },
+  {
+    title: "Capitalflex Admin Dashboard",
+    description:
+      "Admin dashboard for Capitalflex financial services to manage users, loans, rewards and transactions. Built with React, TailwindCSS for front-end, Node.js, Express, React/ TanStackQuery for Back-end and MongoDB as a database.",
+    tech: [
+      "ReactJs",
+      "MongoDB",
+      "Typescript",
+      "ReactQuery",
+      "Node.js",
+      "TailwindCSS",
+      "Express.js",
+      "Mongoose",
+      "Axios",
+      "Vercel",
+      "JWT",
+    ],
+    demoLink: "#",
+    githubLink: "https://github.com/omkarbhusnale/capitalflex-admin-dashboard",
+    bgImage: "/projects/capitalflex-admin.png",
   },
   {
     title: "Disney Plus",
     description:
-      "Full-stack Disney Plus Clone build with using ReactJs Styled Components, Redux, and Firebase Tools. Features include user authentication.",
-    tech: ["ReactJs", "Node.js", "Firebase", "Redux", "Styled Components"],
+      "Disney Plus Frontend Clone build with using ReactJs Styled Components and Firebase Tools. Features include user authentication.",
+    tech: ["ReactJs", "Node.js", "Firebase", "Styled Components"],
     demoLink: "https://disneyplus-clone-3eaf1.web.app/",
     githubLink: "https://github.com/omkarbhusnale/disney-clone",
     bgImage: "/projects/disneyPlus.png",
   },
   {
-    title: "E-Commerce Platform",
-    description:
-      "Full-stack e-commerce solution built with Next.js, Node.js, and MongoDB. Features include user authentication, payment processing, and order management.",
-    tech: ["Next.js", "Node.js", "MongoDB", "Stripe", "TailwindCSS"],
-    demoLink: "#",
-    githubLink: "#",
-    bgImage: "/projects/eCommerce.png",
-  },
-  {
     title: "Task Management App",
     description:
       "Real-time task management application with team collaboration features. Built using React, Firebase, and Material-UI.",
-    tech: ["React", "Firebase", "Material-UI", "Redux"],
+    tech: ["React", "Firebase", "Material-UI"],
     demoLink: "#",
     githubLink: "#",
-    bgImage: "/projects/taskManagement.png",
+    bgImage: "/projects/imageNotFound.png",
   },
 ];
 
@@ -98,33 +110,27 @@ export const skills = [
       "Python",
       "Java",
       "CSharp",
-      "PostgreSQL",
-      "MongoDB",
-      "MySQL",
+      "Express.js",
+      "ASP.NET Core",
+      "React Query",
+      "RESTful APIs",
     ],
+  },
+  {
+    category: "Database",
+    items: ["MongoDB", "PostgreSQL", "MySQL", "SQLite", "MSSQL"],
   },
   {
     category: "DevOps",
-    items: ["Docker", "AWS", "CI/CD", "Kubernetes"],
+    items: ["Docker", "AWS", "CI/CD", "GitHub Actions"],
   },
   {
     category: "Tools & Version Control",
-    items: [
-      "Git",
-      "GitHub",
-      "CodeSpace",
-      "VS Code",
-      "Visual Studio",
-      "Postman",
-    ],
+    items: ["Git", "GitHub", "VS Code", "Visual Studio", "Postman"],
   },
   {
     category: "Cloud & Deployment",
-    items: ["IIS", "Vercel", "Netlify"],
-  },
-  {
-    category: "Testing",
-    items: ["React Testing Library"],
+    items: ["Vercel", "Netlify", "Render", "IIS"],
   },
 ];
 
